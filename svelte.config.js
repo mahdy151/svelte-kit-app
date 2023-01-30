@@ -11,7 +11,12 @@ const config = {
 	kit: {
 		adapter: cloudflare({
 			assets: true,
-			dynamic_origin: true
+			dynamic_origin: true,
+			// precompress: true,
+			precompress: {
+				brotli: true,
+				gzip: true,
+			},
 		})
 	}
 }
