@@ -1,3 +1,4 @@
+import cloudflare from "@sveltejs/adapter-cloudflare"
 import adapter from 'svelte-adapter-bun'
 import preprocess from 'svelte-preprocess'
 
@@ -8,8 +9,7 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter({
-			out: 'build',
+		adapter: cloudflare({
 			assets: true,
 			dynamic_origin: true
 		})
