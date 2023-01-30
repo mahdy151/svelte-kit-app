@@ -13,4 +13,4 @@
 	</ul>
 </nav>
 
-<h1>HOMEEEE PAGE</h1>
+<h1>HOME PAGE</h1>
