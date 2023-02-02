@@ -9,7 +9,7 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter({
+		adapter: cloudflare({
 			assets: true,
 			dynamic_origin: true,
 			precompress: true

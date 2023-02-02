@@ -6,9 +6,8 @@
 
 <h1>POSTS PAGE</h1>
 <p>you can <a href="/posts/create">+create</a> post here</p>
-
 <style>
 	h1 {
 		color: aqua;
 	}
-</style>
+</style>	
