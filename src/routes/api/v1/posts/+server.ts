@@ -6,14 +6,13 @@ const allPostsIndex = 'all_post'
 
 export const GET: RequestHandler = async () => {
 	try {
-		const result = await db.query(
-			query.Map(query.Paginate(query.Match(query.Index(allPostsIndex))), (ref) => query.Get(ref))
-		)
+		const result = await db.query(query.Map(query.Paginate(query.Match(query.Index(allPostsIndex))), (ref) => query.Select("data", query.Get(ref))))
 
 		const options: ResponseInit = {
 			status: 200,
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+        'Cache-Control': 'public, max-age=0, s-magage=60'
 			}
 		}
 
