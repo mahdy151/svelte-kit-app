@@ -11,14 +11,15 @@
 	// 	return posts.data
 	// }
 	export let data: PageData
+	$: ({posts}= data)
 </script>
 
 <h1>POSTS PAGE</h1>
 <p>you can <a href="/posts/create">+create</a> post here</p>
 
 
-<p>Showing {data.posts.data.length} posts.</p>
-{#each data.posts.data as post }
+<p>Showing {posts.data.length} posts.</p>
+{#each posts.data as post }
 	<ul>
 		<li>
 			<h4>{post.title}</h4>
