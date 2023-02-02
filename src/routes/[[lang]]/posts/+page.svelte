@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte'
-	onMount(() => console.log('Mounted Posts Page'))
-	onDestroy(() => console.log('Unmounted Posts Page'))
+	// import { onMount, onDestroy } from 'svelte'
+	// onMount(() => console.log('Mounted Posts Page'))
+	// onDestroy(() => console.log('Unmounted Posts Page'))
 	async function getPosts() {
 		const response = await fetch('/api/v1/posts')
 		const posts = await response.json()
@@ -15,9 +15,24 @@
 {#await getPosts()}
 	<p>loading...</p>
 {:then posts} 
-	<pre>
-		{JSON.stringify(posts, null,2)}
-	</pre>
+	<p>Showing {posts.length} posts.</p>
+
+	{#each posts as {post}}
+		<ul>
+			<li>
+				<h4>
+					{post.title}
+				</h4>
+				<span>
+					{post.content}
+				</span>
+				<p>
+					author:{post.author}<br>
+					comments:{post.comment_nu}
+				</p>
+			</li>
+		</ul>		
+	{/each}
 {:catch error}
 	<p>{error.message}</p>
 {/await}

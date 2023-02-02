@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte'
-	onMount(() => console.log('Mounted Home Page'))
-	onDestroy(() => console.log('Unmounted Home Page'))
+	// import { onMount, onDestroy } from 'svelte'
+	// onMount(() => console.log('Mounted Home Page'))
+	// onDestroy(() => console.log('Unmounted Home Page'))
 	async function subscribe(event: Event) {
 		const form = event.target as HTMLFormElement
 		const data = new FormData(form)
