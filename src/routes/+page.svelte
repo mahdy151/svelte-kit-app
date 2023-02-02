@@ -1,16 +1,7 @@
 <script lang="ts">
-	import '@picocss/pico'
+	import { onMount, onDestroy } from 'svelte'
+	onMount(() => console.log('Mounted Home Page'))
+	onDestroy(() => console.log('Unmounted Home Page'))
 </script>
-
-<nav>
-	<ul>
-		<li>
-			<a href="/">HOME</a>
-		</li>
-		<li>
-			<a href="/posts">POST</a>
-		</li>
-	</ul>
-</nav>
 
 <h1>HOME PAGE</h1>

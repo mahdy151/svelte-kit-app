@@ -1,4 +1,4 @@
-import cloudflare from "@sveltejs/adapter-cloudflare"
+import cloudflare from '@sveltejs/adapter-cloudflare'
 import adapter from 'svelte-adapter-bun'
 import preprocess from 'svelte-preprocess'
 
@@ -9,14 +9,10 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: cloudflare({
+		adapter: adapter({
 			assets: true,
 			dynamic_origin: true,
-			// precompress: true,
-			precompress: {
-				brotli: true,
-				gzip: true,
-			},
+			precompress: true
 		})
 	}
 }
