@@ -17,7 +17,7 @@
 {:then posts} 
 	<p>Showing {posts.length} posts.</p>
 
-	{#each posts as {post}}
+	{#each posts as post}
 		<ul>
 			<li>
 				<h4>
